@@ -2,8 +2,8 @@
 
   angular.module('app').service('applicationService', applicationService)
 
-  applicationService.$inject = ['$http', 'APPLICATION_SERVICE_URL']
-  function applicationService($http, APPLICATION_SERVICE_URL){
+  applicationService.$inject = ['$http', 'APPLICATION_SERVICE_URL', 'JOB_SERVICE_URL']
+  function applicationService($http, APPLICATION_SERVICE_URL, JOB_SERVICE_URL){
     const vm = this
 
     vm.getAllApplicationsForUser = function(userId){
@@ -27,7 +27,7 @@
     }
 
     vm.getJob = function (jobId) {
-      const url =`localhost:8080/jobs/${jobId}`
+      const url =`${JOB_SERVICE_URL}/jobs/${jobId}`
       return $http.get(url)
     }
 

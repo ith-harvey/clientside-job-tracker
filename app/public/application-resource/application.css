@@ -1,0 +1,13 @@
+.ng-invalid-required {
+    box-shadow: 2px 2px 2px 1px orange;
+}
+
+form.ng-invalid-required {
+    box-shadow: none;
+}
+
+.title {
+  font-size: 17px;
+  color: darkblue;
+  font-weight: bold;
+}

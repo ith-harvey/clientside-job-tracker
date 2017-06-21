@@ -4,11 +4,12 @@
       <h3 class="panel-title">Applications<a class="pull-right glyphicon glyphicon glyphicon-plus-sign clickable_space" ui-sref="application"></a></h3>
     </div>
     <ul class="list-group" ng-repeat="application in $ctrl.applications">
-      <!-- Need to fix this!!! for tomorrow -->
+
       <li ui-sref="inspectApplication({appTitle: application.title, jobId: application.id, appId: application.applicationId})" class="list-group-item text-left panel-body applications-panel-modify" ng-class="mouseHover" ng-mouseover="mouseHover='active-hover'"
 ng-mouseleave="mouseHover=''" >
           {{application.title}}
       </li>
     </ul>
+    <div ng-if="!$ctrl.userId" class="text-left panel-body">Please login to see your existing applications.</div>
   </div>
 </div>

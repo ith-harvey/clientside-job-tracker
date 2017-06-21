@@ -12,24 +12,33 @@
       vm.applications = []
 
 
-
     vm.$onInit = function () {
       const userId = $cookies.get('id')
-      applicationService.getAllApplicationsForUser(userId).then( response => {
-        response.data.forEach( application => {
-          jobService.getJob(application.jobId).then( job => {
-            if (job.data === "") {
-              console.log("broken job hit");
-            } else {
-              job.data.applicationId = application.id
-              vm.applications.push(job.data)
-             }
-          })
+      vm.userId = $cookies.get('id')
 
+      // if the user is logged in run code
+      if (userId) {
+        applicationService.getAllApplicationsForUser(userId).then( response => {
+
+          response.data.forEach( application => {
+
+            jobService.getJob(application.jobId).then( job => {
+
+              if (job.data === "") {
+                console.log("broken job hit");
+              } else {
+                job.data.applicationId = application.id
+                vm.applications.push(job.data)
+
+              }
+            })
+          })
         })
 
-      })
+    } else {
+      console.log('user is not logged in');
     }
+  }
 
   }
 

@@ -19,8 +19,8 @@
       return $http.patch(actionsUrl,data)
     }
 
-    vm.getActions = function() {
-      const actionsUrl = `${APPLICATION_SERVICE_URL}/actions`
+    vm.getActions = function(userId) {
+      const actionsUrl = `${APPLICATION_SERVICE_URL}/actions/user/${userId}`
       return $http.get(actionsUrl)
     }
 

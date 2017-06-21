@@ -4,14 +4,15 @@
       templateUrl: './main-page/actions.template.html',
       controller: controller,
     })
-    controller.$inject = ['actionsService']
+    controller.$inject = ['actionsService', '$cookies']
 
-  function controller(actionsService) {
+  function controller(actionsService, $cookies) {
     const vm = this
     vm.noRemaningActions = false
 
     vm.$onInit = function () {
-       loadActions().then( response => {
+      const userId = $cookies.get('id')
+       loadActions(userId).then( response => {
          vm.actions = response
        })
 
@@ -27,18 +28,14 @@
       console.log('prior to load actions call',vm.actions);
       actionsService.updateAction(keyUpdating,id).then( response => {
         console.log('this is the response', response);
-        loadActions().then( response => {
+        loadActions(userId).then( response => {
           vm.actions = response
         })
       })
-
-
-      console.log('post to load actions call',vm.actions);
-
     }
 
-    function loadActions() {
-      return actionsService.getActions().then( response => {
+    function loadActions(userId) {
+      return actionsService.getActions(userId).then( response => {
         console.log(response.data);
           return response.data.filter( action => {
             if(action.active && !action.complete) {

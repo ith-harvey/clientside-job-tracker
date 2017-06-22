@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 <!-- https://bootsnipp.com/snippets/QXpo5 -->
-
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
@@ -10,8 +8,6 @@
 <html lang="en" class="no-js">
 <!--<![endif]-->
 
-=======
->>>>>>> 6a74f16ce7bc0b01def329ff9edaf86f27f6dadf
 <head>
   <meta charset="UTF-8" />
   <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
@@ -29,64 +25,69 @@
     </header>
 
     <section>
-        <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
-        <div id="wrapper" class="col-md-5 col-md-offset-3">
+      <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+      <div id="wrapper" class="col-md-4 col-md-offset-4">
 
-          <div id="login" ng-show="!$ctrl.activeSignUp" class="animate form">
-            <form ng-submit="$ctrl.login($event)" autocomplete="on">
-              <h1>Log in</h1>
-              <div class="form-group">
-                <label for="username" class="uname col-md-12 text-left"> Your email or username </label>
-                <input id="username" name="username" class="form-control col-md-12" required="required" type="text" ng-model="$ctrl.user.username" placeholder="myusername or mymail@mail.com"></input>
-              </div>
-              <div class="form-group">
-                <label for="password" class="youpasswd col-md-12 text-left"> Your password </label>
-                <input id="password" name="password" class="form-control col-md-12" required="required" type="password" ng-model="$ctrl.user.password" placeholder="eg. X8df!90EO"></input>
-              </div>
-              <div class="form-group">
-                <input type="submit" class="btn btn-default"value="Login" />
-              </div>
-              <p class="change_link"> Not a member yet ?
-                <a ng-click="$ctrl.signUp()" class="to_register">Join us</a>
-              </p>
-            </form>
-          </div>
-
-          <div id="register" ng-show="$ctrl.activeSignUp" class="animate form">
-            <form ng-submit="$ctrl.register($event)" autocomplete="on">
-              <h1> Sign up </h1>
-              <div class="form-group">
-                <label for="usernamesignup" class="uname text-left col-md-12">Your username </label>
-                <input id="usernamesignup" name="username" class="form-control col-md-12" required="required" type="text" placeholder="mysuperusername690" ng-model="$ctrl.user.username" />
-              </div>
-
-              <div class="form-group">
-                <label for="emailsignup" class="youmail text-left col-md-12"> Your email</label>
-                <input id="emailsignup" class="form-control col-md-12" name="email" required="required" type="email" placeholder="mysupermail@mail.com" ng-model="$ctrl.user.email" />
-              </div>
-
-              <div class="form-group">
-                <label for="passwordsignup" class="col-md-12 text-left youpasswd">Your password </label>
-                <input id="passwordsignup" name="password" class="form-control col-md-12" required="required" type="password" placeholder="eg. X8df!90EO" ng-model="$ctrl.user.password" />
-              </div>
-              <div class="form-group">
-                <label for="passwordsignup_confirm" class="youpasswd text-left col-md-12">Please confirm your password </label>
-                <input id="passwordsignup_confirm" class="form-control col-md-12" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO" />
-              </div>
-
-                    <div>
-                      <form ng-submit="$ctrl.login($event)">
-                        <input hidden id="testUser" name="username" type="text" ng-model="$ctrl.user.username" ng-init="$ctrl.user.username='magic mike'"/>
-                        <input hidden id="testPass" name="password" type="password" ng-model="$ctrl.user.password" ng-init="$ctrl.user.password='itsmagicbaby'"/>
-                        <label for="testDrive">Log in as Test User</label>
-                        <input id="testDrive" type="submit" class="btn btn-primary">
-                      </form>
-                    </div>
-
-                </div>
+        <div id="login" ng-show="!$ctrl.activeSignUp" class="animate form">
+          <form ng-submit="$ctrl.login($event)" autocomplete="on">
+            <h1>Log in</h1>
+            <div class="form-group">
+              <label for="username" class="uname col-md-12 text-left"> Your email or username </label>
+              <input id="username" name="username" class="form-control col-md-12" required="required" type="text" ng-model="$ctrl.user.username" placeholder="myusername or mymail@mail.com"></input>
             </div>
-        </section>
-    </div>
+            <div class="form-group">
+              <label for="password" class="youpasswd col-md-12 text-left"> Your password </label>
+              <input id="password" name="password" class="form-control col-md-12" required="required" type="password" ng-model="$ctrl.user.password" placeholder="eg. X8df!90EO"></input>
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-default" value="Login" />
+            </div>
+          </form>
+
+          <!-- Test user login  -->
+          <form ng-submit="$ctrl.login($event)">
+            <input hidden id="testUser" name="username" type="text" ng-model="$ctrl.user.username" ng-init="$ctrl.user.username='magic mike'">
+            <input hidden id="testPass" name="password" type="password" ng-model="$ctrl.user.password" ng-init="$ctrl.user.password='itsmagicbaby'">
+            <input id="testDrive" type="submit" value="Log in as Test User" class="btn btn-primary">
+          </form>
+
+          <p class="change_link"> Not a member yet ?
+            <a ng-click="$ctrl.signUp()" class="to_register">Join us</a>
+          </p>
+
+        </div>
+
+        <div id="register" ng-show="$ctrl.activeSignUp" class="animate form">
+
+          <form ng-submit="$ctrl.register($event)" autocomplete="on">
+            <h1> Sign up </h1>
+            <div class="form-group">
+              <label for="usernamesignup" class="uname text-left col-md-12">Your username </label>
+              <input id="usernamesignup" name="username" class="form-control col-md-12" required="required" type="text" placeholder="mysuperusername690" ng-model="$ctrl.user.username" />
+            </div>
+
+            <div class="form-group">
+              <label for="emailsignup" class="youmail text-left col-md-12"> Your email</label>
+              <input id="emailsignup" class="form-control col-md-12" name="email" required="required" type="email" placeholder="mysupermail@mail.com" ng-model="$ctrl.user.email" />
+            </div>
+
+            <div class="form-group">
+              <label for="passwordsignup" class="col-md-12 text-left youpasswd">Your password </label>
+              <input id="passwordsignup" name="password" class="form-control col-md-12" required="required" type="password" placeholder="eg. X8df!90EO" ng-model="$ctrl.user.password" />
+            </div>
+            <div class="form-group">
+              <label for="passwordsignup_confirm" class="youpasswd text-left col-md-12">Please confirm your password </label>
+              <input id="passwordsignup_confirm" class="form-control col-md-12" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO" />
+            </div>
+          </form>
+
+          <p class="change_link"> Already a member?
+            <a ng-click="$ctrl.signUp()">Log in</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
 
 </html>

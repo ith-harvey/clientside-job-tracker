@@ -9,6 +9,7 @@
   function controller(actionsService, $cookies) {
     const vm = this
     vm.noRemaningActions = false
+    vm.userId = $cookies.get('id')
 
     vm.$onInit = function () {
       const userId = $cookies.get('id')

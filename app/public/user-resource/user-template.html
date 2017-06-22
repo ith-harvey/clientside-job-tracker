@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- https://bootsnipp.com/snippets/QXpo5 -->
 
 <!DOCTYPE html>
@@ -9,6 +10,8 @@
 <html lang="en" class="no-js">
 <!--<![endif]-->
 
+=======
+>>>>>>> 6a74f16ce7bc0b01def329ff9edaf86f27f6dadf
 <head>
   <meta charset="UTF-8" />
   <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
@@ -71,14 +74,19 @@
                 <input id="passwordsignup_confirm" class="form-control col-md-12" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO" />
               </div>
 
-                <input type="submit" class="btn btn-default" value="Sign up" />
-                Already a member ?
-                <a ng-click="$ctrl.signUp()" class="o_register"> Go and log in </a>
-            </form>
-          </div>
-        </div>
-    </section>
-  </div>
+                    <div>
+                      <form ng-submit="$ctrl.login($event)">
+                        <input hidden id="testUser" name="username" type="text" ng-model="$ctrl.user.username" ng-init="$ctrl.user.username='magic mike'"/>
+                        <input hidden id="testPass" name="password" type="password" ng-model="$ctrl.user.password" ng-init="$ctrl.user.password='itsmagicbaby'"/>
+                        <label for="testDrive">Log in as Test User</label>
+                        <input id="testDrive" type="submit" class="btn btn-primary">
+                      </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 
 </html>

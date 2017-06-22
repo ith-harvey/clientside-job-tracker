@@ -76,7 +76,9 @@ html {
   margin-bottom: 20px;
 }
 
-
+#main-page-row {
+  width: 100%;
+}
 
 /*//Foooter // */
 .wrapper {

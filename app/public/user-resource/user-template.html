@@ -1,15 +1,3 @@
-
-<!-- https://bootsnipp.com/snippets/QXpo5 -->
-
-<!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
-<html lang="en" class="no-js">
-<!--<![endif]-->
-
 <head>
     <meta charset="UTF-8" />
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
@@ -56,6 +44,8 @@
                         </form>
                     </div>
 
+
+
                     <div id="register" class="animate form">
                         <form ng-submit="$ctrl.register($event)" autocomplete="on">
                             <h1> Sign up </h1>
@@ -84,6 +74,15 @@
                                 <a href="#tologin" class="to_register"> Go and log in </a>
                             </p>
                         </form>
+                    </div>
+
+                    <div>
+                      <form ng-submit="$ctrl.login($event)">
+                        <input hidden id="testUser" name="username" type="text" ng-model="$ctrl.user.username" ng-init="$ctrl.user.username='magic mike'"/>
+                        <input hidden id="testPass" name="password" type="password" ng-model="$ctrl.user.password" ng-init="$ctrl.user.password='itsmagicbaby'"/>
+                        <label for="testDrive">Log in as Test User</label>
+                        <input id="testDrive" type="submit" class="btn btn-primary">
+                      </form>
                     </div>
 
                 </div>

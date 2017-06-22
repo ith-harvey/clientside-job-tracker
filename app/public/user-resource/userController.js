@@ -10,6 +10,13 @@
   function userController(userService, $window, $cookies){
     const vm = this
 
+
+    vm.$onInit = function(){
+      vm.activeSignUp = false
+
+    }
+
+
     vm.login = function(e){
       e.preventDefault()
       const user = {username: vm.user.username, password: vm.user.password}
@@ -47,6 +54,10 @@
       userService.getUsers()
         .then((response) => console.log(response))
         .catch((err) => console.error(err))
+    }
+
+    vm.signUp = function() {
+      vm.activeSignUp ? vm.activeSignUp = false : vm.activeSignUp = true
     }
 
   }

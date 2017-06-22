@@ -1,0 +1,11 @@
+
+
+#wrapper {
+	background-color: lightgrey;
+	border-radius: 5px;
+	text-align: center;
+}
+
+label {
+	margin-top: 1rem;
+}

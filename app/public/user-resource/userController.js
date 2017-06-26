@@ -20,6 +20,7 @@
     vm.login = function(e){
       e.preventDefault()
       const user = {username: vm.user.username, password: vm.user.password}
+      console.log(user, 'here is what is loggin in');
 
       userService.login(user)
         .then((response) => {
